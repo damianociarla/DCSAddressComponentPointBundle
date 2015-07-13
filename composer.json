@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "damianociarla/address-bundle": "dev-master",
+        "damianociarla/address-bundle": "~2.0",
         "creof/doctrine2-spatial": ">=0.0.1"
     },
     "autoload": {
