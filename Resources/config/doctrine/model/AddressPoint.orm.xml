@@ -1,0 +1,17 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="DCS\AddressComponent\PointBundle\Model\AddressPoint">
+
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO" />
+        </id>
+
+        <field name="point" column="point" type="point" nullable="false" />
+
+        <field name="geoInfo" column="geo_info" type="array" nullable="true" />
+
+    </mapped-superclass>
+
+</doctrine-mapping>

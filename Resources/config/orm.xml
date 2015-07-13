@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="dcs_address_component_point.manager.address_point.default.class">DCS\AddressComponent\PointBundle\Doctrine\ORM\AddressPointManager</parameter>
+    </parameters>
+
+    <services>
+        <service id="dcs_address_component_point.manager.address_point.default" class="%dcs_address_component_point.manager.address_point.default.class%">
+            <argument>%dcs_address_component_point.model_class%</argument>
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="event_dispatcher" />
+        </service>
+    </services>
+</container>
