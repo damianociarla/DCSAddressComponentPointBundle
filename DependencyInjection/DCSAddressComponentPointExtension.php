@@ -27,5 +27,6 @@ class DCSAddressComponentPointExtension extends Extension
         $container->setAlias('dcs_address_component_point.manager.address_point', 'dcs_address_component_point.manager.address_point.default');
 
         $loader->load('form.xml');
+        $loader->load('listener.xml');
     }
 }
