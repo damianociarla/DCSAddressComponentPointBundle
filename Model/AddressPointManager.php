@@ -29,16 +29,17 @@ abstract class AddressPointManager implements ComponentManagerInterface
     /**
      * @inheritDoc
      */
-    public function save(AddressComponentInterface $addressComponent)
+    public function save(AddressComponentInterface $addressComponent, $andFlush = true)
     {
         $this->dispatcher->dispatch(DCSAddressComponentPointEvents::BEFORE_SAVE_ADDRESS, new AddressPointEvent($addressComponent));
-        $this->persist($addressComponent);
+        $this->persist($addressComponent, $andFlush);
     }
 
     /**
      * Persist entity on database
      *
      * @param AddressComponentInterface $addressComponent
+     * @param boolean $andFlush
      */
-    protected abstract function persist(AddressComponentInterface $addressComponent);
+    protected abstract function persist(AddressComponentInterface $addressComponent, $andFlush = true);
 }

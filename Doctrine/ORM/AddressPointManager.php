@@ -32,10 +32,13 @@ class AddressPointManager extends BaseAddressPointManager
     /**
      * @inheritdoc
      */
-    public function persist(AddressComponentInterface $addressComponent)
+    public function persist(AddressComponentInterface $addressComponent, $andFlush = true)
     {
         $this->entityManager->persist($addressComponent);
-        $this->entityManager->flush();
+
+        if ($andFlush) {
+            $this->entityManager->flush();
+        }
     }
 
     /**
